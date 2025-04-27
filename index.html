@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>VueでPNG作成</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="html2canvas.min.js"></script> <!-- ローカル読み込み -->
+</head>
+<body>
+  <div id="app">
+    <h1>VueでPNG作成するテスト</h1>
+
+    <select v-model="count">
+      <option disabled value="">個数を選択</option>
+      <option value="1">1個</option>
+      <option value="3">3個</option>
+      <option value="5">5個</option>
+    </select>
+
+    <div class="capture-area" ref="captureArea">
+      <div v-for="n in count" :key="n" class="box">
+        複製Div {{ n }}
+      </div>
+    </div>
+
+    <button @click="makePng">PNG作成</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

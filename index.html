@@ -2,26 +2,23 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>VueでPNG作成</title>
+  <title>1280x720 PNG作成テスト</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3"></script>
-  <script src="html2canvas.min.js"></script> <!-- ローカル読み込み -->
+  <script src="html2canvas.min.js"></script>
 </head>
 <body>
   <div id="app">
-    <h1>VueでPNG作成するテスト</h1>
-
-    <select v-model="count">
-      <option disabled value="">個数を選択</option>
-      <option value="1">1個</option>
-      <option value="3">3個</option>
-      <option value="5">5個</option>
-    </select>
-
+    <h1>PNG作成（1280×720）</h1>
     <div class="capture-area" ref="captureArea">
-      <div v-for="n in count" :key="n" class="box">
-        複製Div {{ n }}
-      </div>
+        <div id="1" class="parentDiv"></div> <!-- 月曜日 -->
+        <div id="2" class="parentDiv"></div> <!-- 火曜日 -->
+        <div id="3" class="parentDiv"></div> <!-- 水曜日 -->
+        <div id="4" class="parentDiv"></div> <!-- 木曜日 -->
+        <div id="5" class="parentDiv"></div> <!-- 金曜日 -->
+        <div id="6" class="parentDiv"></div> <!-- 土曜日 -->
+        <div id="7" class="parentDiv"></div> <!-- 日曜日 -->
+
     </div>
 
     <button @click="makePng">PNG作成</button>
